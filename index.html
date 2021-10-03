@@ -1,0 +1,690 @@
+
+<!doctype html>
+<html>
+  <head>
+    <link href="images/favicon.ico" rel="icon" type="image/ico" />
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for Uphany Shell"
+        >
+    <title>Uphany Shell</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;html&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-783d17ee.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="html">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#themes" class="toc-h1 toc-link" data-title="Themes">Themes</a>
+          </li>
+          <li>
+            <a href="#api-reference" class="toc-h1 toc-link" data-title="API Reference">API Reference</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#audio" class="toc-h2 toc-link" data-title="Audio">Audio</a>
+                  </li>
+                  <li>
+                    <a href="#audiodevice" class="toc-h2 toc-link" data-title="AudioDevice">AudioDevice</a>
+                  </li>
+                  <li>
+                    <a href="#createcontextmenu-array" class="toc-h2 toc-link" data-title="CreateContextMenu(array)">CreateContextMenu(<em>array</em>)</a>
+                  </li>
+                  <li>
+                    <a href="#openfilemodal-object-gt-promise" class="toc-h2 toc-link" data-title="OpenFileModal(object) -&gt; promise">OpenFileModal(<em>object</em>) -&gt; <em>promise</em></a>
+                  </li>
+                  <li>
+                    <a href="#quit" class="toc-h2 toc-link" data-title="Quit()">Quit()</a>
+                  </li>
+                  <li>
+                    <a href="#startmenu" class="toc-h2 toc-link" data-title="StartMenu">StartMenu</a>
+                  </li>
+                  <li>
+                    <a href="#system" class="toc-h2 toc-link" data-title="System">System</a>
+                  </li>
+                  <li>
+                    <a href="#taskevent" class="toc-h2 toc-link" data-title="TaskEvent">TaskEvent</a>
+                  </li>
+                  <li>
+                    <a href="#tasks" class="toc-h2 toc-link" data-title="Tasks">Tasks</a>
+                  </li>
+                  <li>
+                    <a href="#themeelementtype" class="toc-h2 toc-link" data-title="ThemeElementType">ThemeElementType</a>
+                  </li>
+                  <li>
+                    <a href="#themesettings" class="toc-h2 toc-link" data-title="ThemeSettings">ThemeSettings</a>
+                  </li>
+                  <li>
+                    <a href="#window" class="toc-h2 toc-link" data-title="Window">Window</a>
+                  </li>
+                  <li>
+                    <a href="#windowevents" class="toc-h2 toc-link" data-title="WindowEvents">WindowEvents</a>
+                  </li>
+                  <li>
+                    <a href="#windowpostype" class="toc-h2 toc-link" data-title="WindowPosType">WindowPosType</a>
+                  </li>
+                  <li>
+                    <a href="#windowtask" class="toc-h2 toc-link" data-title="WindowTask">WindowTask</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Uphany Shell documentation page!</p>
+<h1 id='themes'>Themes</h1>
+<p>Uphany Shells starts up and looks for theme.json files to load by default. The current defaults are in <code>themes/default/taskbar</code> and <code>themes/default/background</code>.
+They indicate settings and the windows that should be opened for that theme. The following are the json parameters that can be specified:</p>
+
+<blockquote>
+<p>theme.json</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="c1">// Unique ID, can be anything right now. No space.</span>
+    <span class="dl">"</span><span class="s2">themeID</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">default-taskbar</span><span class="dl">"</span><span class="p">,</span>
+
+    <span class="c1">// Identifiable Name</span>
+    <span class="dl">"</span><span class="s2">themeName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Default Uphany Taskbar</span><span class="dl">"</span><span class="p">,</span>
+
+    <span class="cm">/* 
+     *  Settings Array
+     *
+     *      enableAutomaticReload: Whenever a file changes in this file's directory, it will reload all files and create windows anew with the changes.
+     */</span>
+    <span class="dl">"</span><span class="s2">settings</span><span class="dl">"</span><span class="p">:</span>
+    <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">enableAutomaticReload</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+
+    <span class="cm">/*
+     *  Elements Array
+     *
+     *      Each element is a theme window you want to create. Each element is composed of the following properties:
+     */</span>
+
+    <span class="dl">"</span><span class="s2">elements</span><span class="dl">"</span><span class="p">:</span>
+    <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="c1">// Identifiable Window Name</span>
+            <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">taskbar</span><span class="dl">"</span><span class="p">,</span>
+
+            <span class="c1">// Window's top left x position in percentage of monitor from 0 to 1</span>
+            <span class="dl">"</span><span class="s2">x</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+
+            <span class="c1">// Window's top left y position in percentage of monitor from 0 to 1</span>
+            <span class="dl">"</span><span class="s2">y</span><span class="dl">"</span><span class="p">:</span> <span class="mf">0.973</span><span class="p">,</span>
+
+            <span class="c1">// Window's width in percentage of monitor from 0 to 1</span>
+            <span class="dl">"</span><span class="s2">width</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+
+            <span class="c1">// Window height in percentage of monitor from 0 to 1</span>
+            <span class="dl">"</span><span class="s2">height</span><span class="dl">"</span><span class="p">:</span> <span class="mf">0.027</span><span class="p">,</span>
+
+            <span class="c1">// HTML file to load, relative to this file</span>
+            <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">taskbar.html</span><span class="dl">"</span><span class="p">,</span>
+
+            <span class="c1">// Type of window, choose between taskbar, background, titleless or normal.</span>
+            <span class="c1">//  taskbar: titleless and always on top</span>
+            <span class="c1">//  background: titleless and always on bottom</span>
+            <span class="c1">//  titleless: does not have window's default window border and top</span>
+            <span class="c1">//  normal: regular os window.</span>
+            <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">taskbar</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div><h1 id='api-reference'>API Reference</h1>
+<p>All html pages contain the Shell object, which contains all functions to interact with the desktop and system in various ways. All objects and functions presented in the API are in the main Shell object.
+Documentation uses typescript notation to specify the members and classes in an object, note however there are no actual class definitions.
+Outside of that, all html pages have most of ES6 javascript functionality</p>
+
+<aside class="notice">
+Some advance javascript functions may not work as intented compared to a regular browsers' javascripts
+</aside>
+<h2 id='audio'>Audio</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// Mute audio</span>
+<span class="nx">Shell</span><span class="p">.</span><span class="nx">Audio</span><span class="p">.</span><span class="nx">SetMute</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</code></pre></div><h3 id='audio-setmute-bool-mute'>Audio.SetMute(<em>bool</em> mute)</h3>
+<p>Sets the current mute state of the default audio device</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// Set volume to max</span>
+<span class="nx">Shell</span><span class="p">.</span><span class="nx">Audio</span><span class="p">.</span><span class="nx">SetVolume</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</code></pre></div><h3 id='audio-setvolume-int-volumelevel'>Audio.SetVolume(<em>int</em> volumeLevel)</h3>
+<p>Pass a number from 0 to 100 to set the current volume of the default audio device</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// Get list of audio devices</span>
+<span class="nx">Shell</span><span class="p">.</span><span class="nx">Audio</span><span class="p">.</span><span class="nx">GetDevices</span><span class="p">();</span>
+</code></pre></div><h3 id='audio-getdevices-gt-array'>Audio.GetDevices() -&gt; <em>array</em></h3>
+<p>Returns an array of all output <a href="#audiodevice">AudioDevice</a></p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// Get list of audio devices</span>
+<span class="nx">Shell</span><span class="p">.</span><span class="nx">Audio</span><span class="p">.</span><span class="nx">SetDefaultDevices</span><span class="p">(</span><span class="nx">audioDeviceId</span><span class="p">);</span>
+</code></pre></div><h3 id='audio-setdefaultdevice-string-deviceid'>Audio.SetDefaultDevice(<em>string</em> deviceId)</h3>
+<p>Accepts the id of an <a href="#audiodevice">AudioDevice</a> and sets it as the default audio device</p>
+<h2 id='audiodevice'>AudioDevice</h2>
+<p><em>Class</em>
+<p>Retrieved with <a href="#audio-getdevices">Audio.GetDevices()</a></p></p>
+<h3 id='id-string'>id : <em>string</em></h3>
+<p>Special string identifier</p>
+<h3 id='name-string'>name : <em>string</em></h3>
+<p>User friendly audio device name</p>
+<h2 id='createcontextmenu-array'>CreateContextMenu(<em>array</em>)</h2>
+<p>Spawns a dynamic context menu. Accepts an array of elements to define the context menu options
+Each element must be an array with 2 values, first value being the option name (displayed title), and second must be a function to run on click, or an array to present a sub context menu</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">CreateContextMenu</span><span class="p">([</span>
+  <span class="p">[</span> <span class="dl">"</span><span class="s2">Option 1</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Option 1 Clicked</span><span class="dl">"</span><span class="p">)</span> <span class="p">],</span>
+  <span class="p">[</span> <span class="dl">"</span><span class="s2">Option 2</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Option 2 Clicked</span><span class="dl">"</span><span class="p">)</span> <span class="p">],</span>
+  <span class="p">[</span> <span class="dl">"</span><span class="s2">Nested Options</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">[</span>
+      <span class="p">[</span> <span class="dl">"</span><span class="s2">Nested Option 1</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Nested Option 1 Clicked</span><span class="dl">"</span><span class="p">)</span> <span class="p">]</span>
+    <span class="p">]</span>
+  <span class="p">]</span>
+<span class="p">]);</span>
+</code></pre></div><h2 id='openfilemodal-object-gt-promise'>OpenFileModal(<em>object</em>) -&gt; <em>promise</em></h2>
+<p>Returns a promise. Will open a File Modal window to the user to select one or multiple files. Will resolve the promise with the path the user selected, or reject the promise if the user canceled the selection</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">OpenFileModal</span><span class="p">({</span>
+  <span class="c1">// File modal title</span>
+  <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Select JSON file</span><span class="dl">"</span><span class="p">,</span>
+
+  <span class="c1">// Name shown on the file extension selection list</span>
+  <span class="na">typeName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">JSON</span><span class="dl">"</span><span class="p">,</span>
+
+  <span class="c1">// Array of type wildcards to allow</span>
+  <span class="na">types</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">*.json</span><span class="dl">"</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">filePath</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">filePath</span><span class="p">));</span>
+</code></pre></div><h2 id='quit'>Quit()</h2>
+<p>Quits Uphany Shell completely and restores Window&#39;s Explorer</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Quit</span><span class="p">();</span>
+</code></pre></div><h2 id='startmenu'>StartMenu</h2><h3 id='startmenu-getprograms-gt-array'>StartMenu.GetPrograms() -&gt; <em>array</em></h3>
+<p>Returns an array of all program listing, as presented by the Window&#39;s native start menu</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">Shell</span><span class="p">.</span><span class="nx">StartMenu</span><span class="p">.</span><span class="nx">GetPrograms</span><span class="p">();</span>
+</code></pre></div><h2 id='system'>System</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">System</span><span class="p">.</span><span class="nx">Shutdown</span><span class="p">();</span>
+</code></pre></div><h3 id='shutdown'>Shutdown()</h3>
+<p>Shutdown the computer</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">System</span><span class="p">.</span><span class="nx">Restart</span><span class="p">();</span>
+</code></pre></div><h3 id='restart'>Restart()</h3>
+<p>Restarts the computer</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="nx">Shell</span><span class="p">.</span><span class="nx">System</span><span class="p">.</span><span class="nx">GetUsername</span><span class="p">();</span>
+</code></pre></div><h3 id='getusername-gt-string'>GetUsername() -&gt; <em>string</em></h3>
+<p>Get the username of the current user</p>
+<h2 id='taskevent'>TaskEvent</h2>
+<p><em>Enum</em>
+Enum value returned by <a href="#tasks">Tasks</a> <code>GetAll</code> and <code>BindEvent</code> callback parameter</p>
+<h3 id='taskevent-created'>TaskEvent.Created</h3>
+<p>A task was created</p>
+<h3 id='taskevent-destroyed'>TaskEvent.Destroyed</h3>
+<p>A task was destroyed</p>
+<h3 id='taskevent-focus'>TaskEvent.Focus</h3>
+<p>A task has been focused</p>
+<h3 id='taskevent-iconchange'>TaskEvent.IconChange</h3>
+<p>Task event for when the icon changes</p>
+<h3 id='taskevent-titlechange'>TaskEvent.TitleChange</h3>
+<p>Task event for when the title changes</p>
+<h3 id='taskevent-unfocus'>TaskEvent.Unfocus</h3>
+<p>A task has been unfocused. This task only runs specifically when a task unfocused and no new task is focused</p>
+<h2 id='tasks'>Tasks</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">GetAll</span><span class="p">();</span>
+</code></pre></div><h3 id='tasks-getall-gt-array'>Tasks.GetAll() -&gt; <em>array</em></h3>
+<p>Returns array of all active <a href="#windowtask">Window&#39;s Tasks</a></p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">Focus</span><span class="p">(</span><span class="nx">taskId</span><span class="p">);</span>
+</code></pre></div><h3 id='tasks-focus-string-taskid'>Tasks.Focus(<em>string</em> taskId)</h3>
+<p>Focuses the specified task</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">Minimize</span><span class="p">(</span><span class="nx">taskId</span><span class="p">);</span>
+</code></pre></div><h3 id='tasks-minimize-string-taskid'>Tasks.Minimize(<em>string</em> taskId)</h3>
+<p>Minimizes the specified task</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">Close</span><span class="p">(</span><span class="nx">taskId</span><span class="p">);</span>
+</code></pre></div><h3 id='tasks-close-string-taskid'>Tasks.Close(<em>string</em> taskId)</h3>
+<p>Quits the specified task</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">TrayIconHoverEnter</span><span class="p">(</span><span class="nx">taskId</span><span class="p">);</span>
+</code></pre></div><h3 id='tasks-trayiconhoverenter-string-taskid'>Tasks.TrayIconHoverEnter(<em>string</em> taskId)</h3>
+<p>Sends the tray icon hover enter event to the specified task</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">TrayIconHoverLeave</span><span class="p">(</span><span class="nx">taskId</span><span class="p">);</span>
+</code></pre></div><h3 id='tasks-trayiconhoverleave-string-taskid'>Tasks.TrayIconHoverLeave(<em>string</em> taskId)</h3>
+<p>Sends the tray icon hover leave event to the specified task</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">Run</span><span class="p">(</span><span class="nx">executablePath</span><span class="p">);</span>
+</code></pre></div><h3 id='tasks-run-string-executablepath'>Tasks.Run(<em>string</em> executablePath)</h3>
+<p>Runs the specified executable</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">GetExecutableIconPath</span><span class="p">(</span><span class="nx">executablePath</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">p</span> <span class="o">=&gt;</span> <span class="nx">element</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">p</span><span class="p">);</span>
+</code></pre></div><h3 id='tasks-getexecutableiconpath-string-executablepath-gt-promise'>Tasks.GetExecutableIconPath(<em>string</em> executablePath) -&gt; <em>promise</em></h3>
+<p>Returns a promise, when resolved it will pass the image url of the executable&#39;s icon
+Url is ready to use as an image&#39;s source</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">defaultIcon</span> <span class="o">=</span> <span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">GetDefaultIcon</span><span class="p">();</span>
+</code></pre></div><h3 id='tasks-getdefaulticon-gt-string'>Tasks.GetDefaultIcon() -&gt; <em>string</em></h3>
+<p>Returns an image url to the default icon to use when application does not have icon</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">folderIcon</span> <span class="o">=</span> <span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">GetFolderIcon</span><span class="p">();</span>
+</code></pre></div><h3 id='tasks-getfoldericon-gt-string'>Tasks.GetFolderIcon() -&gt; <em>string</em></h3>
+<p>Return image url to use for folders</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">BindEvent</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">task_event</span><span class="p">,</span> <span class="nx">task</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Do something with the task</span>
+<span class="p">});</span>
+</code></pre></div><h3 id='tasks-bindevent-function-callback'>Tasks.BindEvent(<em>function</em> callback)</h3>
+<p>Register a task event callback. Will be called every time a task event occurs. Receives <a href="#taskevent">TaskEvent</a> and a <a href="#windowtask">WindowTask</a> as parameters.</p>
+<h2 id='themeelementtype'>ThemeElementType</h2>
+<p><em>Enum</em>
+<p>Specified the kind of window</p></p>
+<h3 id='themeelementtype-normal'>ThemeElementType.Normal</h3>
+<p>A normal window with titlebar</p>
+<h3 id='themeelementtype-titleless'>ThemeElementType.Titleless</h3>
+<p>A borderless, titleless window</p>
+<h3 id='themeelementtype-taskbar'>ThemeElementType.Taskbar</h3>
+<p>Same as <code>ThemeElementType.Titleless</code>, but the window is always forced to the front</p>
+<h3 id='themeelementtype-background'>ThemeElementType.Background</h3>
+<p>Same as <code>ThemeElementType.Titleless</code>, but the window is always forced to the back</p>
+<h2 id='themesettings'>ThemeSettings</h2>
+<p>ThemeSettings saves values to a theme specific setting file</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">folderIcon</span> <span class="o">=</span> <span class="nx">Shell</span><span class="p">.</span><span class="nx">ThemeSettings</span><span class="p">.</span><span class="nb">Set</span><span class="p">(</span><span class="dl">"</span><span class="s2">key</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div><h3 id='themesettings-set-string-name-string-value'>ThemeSettings.Set(<em>string</em> name, <em>string</em> value)</h3>
+<p>Sets the property name to the specified value. If you want to store an object/array use <code>JSON.stringify</code> on it</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">Shell</span><span class="p">.</span><span class="nx">ThemeSettings</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="dl">"</span><span class="s2">key</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div><h3 id='themesettings-get-string-name-gt-string'>ThemeSettings.Get(<em>string</em> name) -&gt; <em>string</em></h3>
+<p>Retrieve the saved property</p>
+<h2 id='window'>Window</h2>
+<p>The Window Shell object is used to control the current HTML window</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Window</span><span class="p">.</span><span class="nx">Create</span><span class="p">({</span>
+  <span class="c1">// top left x position of the new window</span>
+  <span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> 
+
+  <span class="c1">// top left y position of the new window</span>
+  <span class="na">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> 
+
+  <span class="c1">// width of the new window</span>
+  <span class="na">width</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> 
+
+  <span class="c1">// height of the new window</span>
+  <span class="na">height</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> 
+
+  <span class="c1">// A Shell.ThemeElementType enum value</span>
+  <span class="na">type</span><span class="p">:</span> <span class="nx">Shell</span><span class="p">.</span><span class="nx">ThemeElementType</span><span class="p">.</span><span class="o">*</span><span class="p">,</span> 
+
+  <span class="c1">// A Shell.WindowPosType enum value</span>
+  <span class="na">posType</span><span class="p">:</span> <span class="nx">Shell</span><span class="p">.</span><span class="nx">WindowPosType</span><span class="p">.</span><span class="o">*</span><span class="p">,</span> 
+
+  <span class="c1">// Unique id for this window.</span>
+  <span class="c1">// If reused and original window is still active, it will refresh the original window</span>
+  <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Window Id</span><span class="dl">"</span><span class="p">,</span> 
+
+  <span class="c1">// Url of the page to load</span>
+  <span class="c1">// Url must the relative to initial url of this theme element.</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">index.html</span><span class="dl">"</span>
+<span class="p">});</span>
+</code></pre></div><h3 id='window-create-object'>Window.Create(<em>object</em>)</h3>
+<p>Creates a new windows, the following parameters can be passed in as an object</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Window</span><span class="p">.</span><span class="nx">Close</span><span class="p">();</span>
+</code></pre></div><h3 id='window-close'>Window.Close()</h3>
+<p>Close the current window</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Window</span><span class="p">.</span><span class="nx">Hide</span><span class="p">();</span>
+</code></pre></div><h3 id='window-hide'>Window.Hide()</h3>
+<p>Will minimize the current window</p>
+<h3 id='window-show'>Window.Show()</h3>
+<p>Unminize and focuses the current window</p>
+<h3 id='window-getpos-windowpostype-postype-gt-object'>Window.GetPos(<em><a href="#windowpostype">WindowPosType</a></em> posType) -&gt; <em>object</em></h3>
+<p>Gets the current position of the window, specify postType to a <a href="#windowpostype">WindowPosType</a> or <code>WindowPosType.Global</code> if none defined. Returns an object with x and y based on the specified <code>WindowPosType</code></p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Window</span><span class="p">.</span><span class="nx">GetPos</span><span class="p">({</span>
+  <span class="na">posType</span><span class="p">:</span> <span class="nx">Shell</span><span class="p">.</span><span class="nx">WindowPosType</span><span class="p">.</span><span class="o">*</span>
+<span class="p">});</span>
+</code></pre></div><h3 id='window-moveto-object'>Window.MoveTo(<em>object</em>)</h3>
+<p>Moves the current window to the specified position. Pass x, y and your desired <a href="#windowpostype">WindowPosType</a></p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Window</span><span class="p">.</span><span class="nx">MoveTo</span><span class="p">({</span>
+  <span class="na">x</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+  <span class="na">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="na">posType</span><span class="p">:</span> <span class="nx">Shell</span><span class="p">.</span><span class="nx">WindowPosType</span><span class="p">.</span><span class="o">*</span>
+<span class="p">});</span>
+</code></pre></div><h3 id='moveby-object'>MoveBy(<em>object</em>)</h3>
+<p>Moves the current by the specified amount relative to the current position</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Window</span><span class="p">.</span><span class="nx">MoveBy</span><span class="p">({</span>
+  <span class="na">x</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+  <span class="na">y</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">});</span>
+</code></pre></div><h3 id='window-resize-int-width-int-height'>Window.Resize(<em>int</em> width, <em>int</em> height)</h3>
+<p>Resize the current window to the specified size</p>
+<h3 id='window-bindevent-function-windowevents-windowevents-callback'>Window.BindEvent(<em>function</em>((WindowEvents)[#windowevents]) callback)</h3>
+<p>Add a callback function every time a window event occurs. Callback function must accept a single (WindowEvents)[#windowevents] enum value</p>
+<h3 id='window-openinspector'>Window.OpenInspector()</h3>
+<p>Opens a inspector view for the current window in a separate window</p>
+<h2 id='windowevents'>WindowEvents</h2>
+<p><em>Enum</em>
+Values received by the <a href="#window-bindevent-function-callback">Window&#39;s BindEvent</a> callback</p>
+<h3 id='windowevents-focus'>WindowEvents.Focus</h3>
+<p>The current window has gained focus</p>
+<h3 id='windowevents-unfocus'>WindowEvents.Unfocus</h3>
+<p>The current window has lost focus</p>
+<h2 id='windowpostype'>WindowPosType</h2>
+<p><em>Enum</em>
+<p>Enumerator used to define the position type.</p></p>
+<h3 id='windowpostype-local'>WindowPosType.Local</h3>
+<p>This type indicates a position relative to the top left of the window</p>
+<h3 id='windowpostype-monitor'>WindowPosType.Monitor</h3>
+<p>This type indicates a position relative to the top left of the monitor</p>
+<h3 id='windowpostype-global'>WindowPosType.Global</h3>
+<p>This type indicates a position relative to the top left of the main monitor</p>
+<h2 id='windowtask'>WindowTask</h2>
+<p><em>Class</em>
+Object returned by <a href="#tasks">Tasks&#39;</a> <code>GetAll</code> and <code>BindEvent</code> callback</p>
+<h3 id='id-numeric'>id : <em>numeric</em></h3>
+<p>Unique numeric identifier. Is reused</p>
+<h3 id='title-string'>title : <em>string</em></h3>
+<p>Title of the task</p>
+<h3 id='active-boolean'>active : <em>boolean</em></h3>
+<p>Is the current task the current active application?</p>
+<h3 id='execname-string'>execName : <em>string</em></h3>
+<p>Name of executable</p>
+<h3 id='execpath-string'>execPath : <em>string</em></h3>
+<p>Full path to executable</p>
+<h3 id='execid-string'>execID : <em>string</em></h3>
+<p>Unique identifier specified by the executable, or the program&#39;s name if none specified</p>
+<h3 id='iconpath-string'>iconPath : <em>string</em></h3>
+<p>Path to load the image icon</p>
+<h3 id='iswindow-boolean'>isWindow : <em>boolean</em></h3>
+<p>Is this a window application, or a tray icon</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="html">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
