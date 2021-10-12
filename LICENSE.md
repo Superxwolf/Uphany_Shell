@@ -4,7 +4,7 @@ By installing or using Uphany Shell software, User agrees to be bound by this Ag
 agree to this Agreement, you are not allowed to install or use any Uphany Shell software made available.
 
 Uphany Shell is free for non-commercial use.
-Any attempt to use Uphany Shell commercially or in a commercial environment will require a commercial license, to obtain a commercial license please contact the developer at: superxwolf@hotmail.com
+Any attempt to use Uphany Shell commercially or in a commercial environment will require a commercial license, to obtain a commercial license please contact the developer at: uphanyshell@gmail.com
 
 Users will retain all rights for any content that they create for Uphany Shell.
 
