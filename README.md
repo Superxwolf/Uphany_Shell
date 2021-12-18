@@ -14,10 +14,6 @@ Please create an issue on this reposity if you ever encoutered a problem with Up
 
 [Join our discord](https://discord.gg/TJHx2kgsNZ)
 
-# Requirements:
-
-You need to install Microsoft's [VC Redistributable x64 for C++](https://aka.ms/vs/17/release/vc_redist.x64.exe)
-
 # License
 
 Uphany Shell is free for personal use
