@@ -317,7 +317,21 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
+            <a href="#shortcuts" class="toc-h1 toc-link" data-title="Shortcuts">Shortcuts</a>
+          </li>
+          <li>
             <a href="#themes" class="toc-h1 toc-link" data-title="Themes">Themes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#how-to-load-a-new-theme" class="toc-h2 toc-link" data-title="How to load a new theme">How to load a new theme</a>
+                  </li>
+                  <li>
+                    <a href="#creating-a-new-theme" class="toc-h2 toc-link" data-title="Creating a new theme">Creating a new theme</a>
+                  </li>
+                  <li>
+                    <a href="#working-with-transparent-window" class="toc-h2 toc-link" data-title="Working with transparent window">Working with transparent window</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#api-reference" class="toc-h1 toc-link" data-title="API Reference">API Reference</a>
@@ -330,6 +344,15 @@
                   </li>
                   <li>
                     <a href="#createcontextmenu-array" class="toc-h2 toc-link" data-title="CreateContextMenu(array)">CreateContextMenu(<em>array</em>)</a>
+                  </li>
+                  <li>
+                    <a href="#desktop" class="toc-h2 toc-link" data-title="Desktop">Desktop</a>
+                  </li>
+                  <li>
+                    <a href="#desktopicon" class="toc-h2 toc-link" data-title="DesktopIcon">DesktopIcon</a>
+                  </li>
+                  <li>
+                    <a href="#desktopicontype" class="toc-h2 toc-link" data-title="DesktopIconType">DesktopIconType</a>
                   </li>
                   <li>
                     <a href="#openfilemodal-object-gt-promise" class="toc-h2 toc-link" data-title="OpenFileModal(object) -&gt; promise">OpenFileModal(<em>object</em>) -&gt; <em>promise</em></a>
@@ -379,9 +402,15 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the Uphany Shell documentation page!</p>
+<h1 id='shortcuts'>Shortcuts</h1>
+<p>This are the shortcuts that are available while running Uphany Shell:</p>
+
+<p><code>CTRL + SHIFT + ESC</code>: Quits Uphany Shell and return to explorer</p>
+
+<p><code>CTRL + SHIFT + U</code>: Opens Uphany Shell&#39;s settings</p>
 <h1 id='themes'>Themes</h1>
 <p>Uphany Shells starts up and looks for theme.json files to load by default. The current defaults are in <code>themes/default/taskbar</code> and <code>themes/default/background</code>.
-They indicate settings and the windows that should be opened for that theme. The following are the json parameters that can be specified:</p>
+They are the configs for the windows that should be opened for that theme. The following are the json parameters that can be specified:</p>
 
 <blockquote>
 <p>theme.json</p>
@@ -391,7 +420,7 @@ They indicate settings and the windows that should be opened for that theme. The
     <span class="dl">"</span><span class="s2">themeID</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">default-taskbar</span><span class="dl">"</span><span class="p">,</span>
 
     <span class="c1">// Identifiable Name</span>
-    <span class="dl">"</span><span class="s2">themeName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Default Uphany Taskbar</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">themeName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Default Uphany Shell Taskbar</span><span class="dl">"</span><span class="p">,</span>
 
     <span class="cm">/* 
      *  Settings Array
@@ -436,10 +465,19 @@ They indicate settings and the windows that should be opened for that theme. The
             <span class="c1">//  titleless: does not have window's default window border and top</span>
             <span class="c1">//  normal: regular os window.</span>
             <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">taskbar</span><span class="dl">"</span><span class="p">,</span>
+
+            <span class="c1">// Make the background of the window transparent</span>
+            <span class="dl">"</span><span class="s2">transparent</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
-</code></pre></div><h1 id='api-reference'>API Reference</h1>
+</code></pre></div><h2 id='how-to-load-a-new-theme'>How to load a new theme</h2>
+<p>By pressing CTRL+SHIFT+U you can open the Uphany Settings window. You will see all the monitors listed, you can then change the current theme on that monitor by pressing the edit button besides the type of theme you want to load.</p>
+<h2 id='creating-a-new-theme'>Creating a new theme</h2>
+<p>All that is needing is to create a JSON text file. Use the content from the <a href="#themes">sample</a></p>
+<h2 id='working-with-transparent-window'>Working with transparent window</h2>
+<p>After creating a transparent window, in order to make it fully transparent you must use css to set the background color to transparent of the html and body.</p>
+<h1 id='api-reference'>API Reference</h1>
 <p>All html pages contain the Shell object, which contains all functions to interact with the desktop and system in various ways. All objects and functions presented in the API are in the main Shell object.
 Documentation uses typescript notation to specify the members and classes in an object, note however there are no actual class definitions.
 Outside of that, all html pages have most of ES6 javascript functionality</p>
@@ -482,7 +520,25 @@ Each element must be an array with 2 values, first value being the option name (
     <span class="p">]</span>
   <span class="p">]</span>
 <span class="p">]);</span>
-</code></pre></div><h2 id='openfilemodal-object-gt-promise'>OpenFileModal(<em>object</em>) -&gt; <em>promise</em></h2>
+</code></pre></div><h2 id='desktop'>Desktop</h2><h3 id='geticons-gt-array'>GetIcons() -&gt; <em>array</em></h3>
+<p>Returns an array of <a href="#DesktopIcon">DesktopIcon</a></p>
+<h2 id='desktopicon'>DesktopIcon</h2>
+<p><em>Structure</em></p>
+<h3 id='displayname-string'>displayName : <em>string</em></h3><h3 id='path-string'>path : <em>string</em></h3><h3 id='type-desktopicontype'>type : <a href="#DesktopIconType">DesktopIconType</a></h3><h2 id='desktopicontype'>DesktopIconType</h2>
+<p><em>Enum</em></p>
+<h3 id='unknown'>Unknown</h3>
+<p>Invalid file type</p>
+<h3 id='folder'>Folder</h3>
+<p>The path points to a folder</p>
+<h3 id='file'>File</h3>
+<p>The path points to a regular file</p>
+<h3 id='archive'>Archive</h3>
+<p>The path points to a compressed file</p>
+<h3 id='shortcut'>Shortcut</h3>
+<p>The path points to a shortcut file</p>
+<h3 id='executable'>Executable</h3>
+<p>The path points to a executable</p>
+<h2 id='openfilemodal-object-gt-promise'>OpenFileModal(<em>object</em>) -&gt; <em>promise</em></h2>
 <p>Returns a promise. Will open a File Modal window to the user to select one or multiple files. Will resolve the promise with the path the user selected, or reject the promise if the user canceled the selection</p>
 <div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">OpenFileModal</span><span class="p">({</span>
   <span class="c1">// File modal title</span>
@@ -543,8 +599,8 @@ Enum value returned by <a href="#tasks">Tasks</a> <code>GetAll</code> and <code>
 <div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">TrayIconHoverLeave</span><span class="p">(</span><span class="nx">taskId</span><span class="p">);</span>
 </code></pre></div><h3 id='tasks-trayiconhoverleave-string-taskid'>Tasks.TrayIconHoverLeave(<em>string</em> taskId)</h3>
 <p>Sends the tray icon hover leave event to the specified task</p>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">Run</span><span class="p">(</span><span class="nx">executablePath</span><span class="p">);</span>
-</code></pre></div><h3 id='tasks-run-string-executablepath'>Tasks.Run(<em>string</em> executablePath)</h3>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">Run</span><span class="p">(</span><span class="nx">executablePath</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</code></pre></div><h3 id='tasks-run-string-executablepath-bool-runasadmin-false'>Tasks.Run(<em>string</em> executablePath, <em>bool</em> runAsAdmin <em>= false</em>)</h3>
 <p>Runs the specified executable</p>
 <div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">Shell</span><span class="p">.</span><span class="nx">Tasks</span><span class="p">.</span><span class="nx">GetExecutableIconPath</span><span class="p">(</span><span class="nx">executablePath</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">p</span> <span class="o">=&gt;</span> <span class="nx">element</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">p</span><span class="p">);</span>
 </code></pre></div><h3 id='tasks-getexecutableiconpath-string-executablepath-gt-promise'>Tasks.GetExecutableIconPath(<em>string</em> executablePath) -&gt; <em>promise</em></h3>
@@ -568,10 +624,12 @@ Url is ready to use as an image&#39;s source</p>
 <p>A normal window with titlebar</p>
 <h3 id='themeelementtype-titleless'>ThemeElementType.Titleless</h3>
 <p>A borderless, titleless window</p>
+<h3 id='themeelementtype-titleless_tool'>ThemeElementType.Titleless_Tool</h3>
+<p>A borderless, titleless window that does not show on the taskbar</p>
 <h3 id='themeelementtype-taskbar'>ThemeElementType.Taskbar</h3>
-<p>Same as <code>ThemeElementType.Titleless</code>, but the window is always forced to the front</p>
+<p>Same as <code>ThemeElementType.Titleless_Tool</code>, but the window is always forced to the front</p>
 <h3 id='themeelementtype-background'>ThemeElementType.Background</h3>
-<p>Same as <code>ThemeElementType.Titleless</code>, but the window is always forced to the back</p>
+<p>Same as <code>ThemeElementType.Titleless_Tool</code>, but the window is always forced to the back</p>
 <h2 id='themesettings'>ThemeSettings</h2>
 <p>ThemeSettings saves values to a theme specific setting file</p>
 <div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">folderIcon</span> <span class="o">=</span> <span class="nx">Shell</span><span class="p">.</span><span class="nx">ThemeSettings</span><span class="p">.</span><span class="nb">Set</span><span class="p">(</span><span class="dl">"</span><span class="s2">key</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">);</span>
@@ -643,6 +701,10 @@ Url is ready to use as an image&#39;s source</p>
 <p>Add a callback function every time a window event occurs. Callback function must accept a single (WindowEvents)[#windowevents] enum value</p>
 <h3 id='window-openinspector'>Window.OpenInspector()</h3>
 <p>Opens a inspector view for the current window in a separate window</p>
+<h3 id='window-maximize'>Window.Maximize()</h3>
+<p>Maximizes the current window</p>
+<h3 id='window-minimize'>Window.Minimize()</h3>
+<p>Minimizes the current window</p>
 <h2 id='windowevents'>WindowEvents</h2>
 <p><em>Enum</em>
 Values received by the <a href="#window-bindevent-function-callback">Window&#39;s BindEvent</a> callback</p>
